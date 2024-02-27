@@ -20,6 +20,7 @@ use crate::context::HolonsContext;
 #[derive(Clone, PartialEq, Eq)]
 pub struct Holon {
     pub state: HolonState,
+    pub validation_state: ValidationState,
     pub saved_node: Option<Record>, // The last saved state of HolonNode. None = not yet created
     pub property_map: PropertyMap,
     //pub relationship_map: RelationshipMap,
@@ -50,6 +51,13 @@ impl fmt::Display for HolonState {
     }
 }
 
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
+pub enum ValidationState {
+    NoDescriptor,
+    ValidationRequired, 
+    Validated,
+    Invalid,
+}
 
 pub trait HolonFieldGettable {
     // type Wrapper;
@@ -77,6 +85,7 @@ impl Holon {
     pub fn new() -> Holon {
         Holon {
             state: HolonState::New,
+            validation_state: ValidationState::NoDescriptor,
             saved_node: None,
             property_map: PropertyMap::new(),
             //relationship_map: RelationshipMap::new(),
@@ -97,6 +106,7 @@ impl Holon {
 
         let holon = Holon {
             state: HolonState::Fetched,
+            validation_state: ValidationState::Validated,
             saved_node: Some(holon_node_record),
             property_map: holon_node.property_map,
             //relationship_map: RelationshipMap::new(),
