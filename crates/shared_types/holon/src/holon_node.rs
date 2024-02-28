@@ -9,8 +9,10 @@ use std::fmt;
 pub struct HolonNode {
     pub property_map: PropertyMap,
 }
+
 pub type PropertyValue = BaseValue;
 pub type PropertyMap = BTreeMap<PropertyName, PropertyValue>;
+
 #[hdk_entry_helper]
 #[derive(Clone, PartialEq, Eq)]
 pub struct HolonId(pub ActionHash);
