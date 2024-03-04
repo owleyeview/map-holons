@@ -16,6 +16,8 @@ pub enum HolonError {
     InvalidHolonReference(String),
     #[error("{0} Not Implemented")]
     NotImplemented(String),
+    #[error("Validation error: {0}")]
+    ValidationError(String),
     // #[error("Wrong type: {0}")]
     // TypeError(String),
 

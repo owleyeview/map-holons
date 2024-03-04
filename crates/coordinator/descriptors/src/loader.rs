@@ -2,7 +2,7 @@ use std::cell::RefCell;
 use std::rc::Rc;
 use holons::context::HolonsContext;
 use holons::holon::Holon;
-use holons::holon_errors::HolonError;
+use shared_types_holon::holon_error::HolonError;
 use holons::staged_reference::StagedReference;
 use shared_types_holon::value_types::{BaseType, MapBoolean, MapString};
 use crate::descriptor_types::{META_PROPERTY_DESCRIPTOR, META_RELATIONSHIP_DESCRIPTOR, META_TYPE_DESCRIPTOR, Schema};

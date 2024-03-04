@@ -18,11 +18,11 @@ use shared_test::holon_fixtures::*;
 use shared_test::*;
 // use shared_test::test;
 use holons::holon_api::*;
-use holons::holon_errors::HolonError;
 use holons::holon::Holon;
 use shared_test::test_data_types::{HolonCreatesTestCase, HolonTestCase};
 use shared_types_holon::holon_node::{PropertyMap, PropertyName};
 use shared_types_holon::value_types::BaseValue;
+use shared_types_holon::holon_error::HolonError;
 
 /// This function iterates through the Vec of Holons provided by the test fixture
 ///

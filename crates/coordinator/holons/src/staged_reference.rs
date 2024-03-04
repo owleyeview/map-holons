@@ -1,10 +1,10 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 use crate::holon::{Holon, HolonFieldGettable};
-use crate::holon_errors::HolonError;
 use hdk::prelude::*;
 use shared_types_holon::holon_node::PropertyName;
 use shared_types_holon::{MapString, PropertyValue};
+use shared_types_holon::holon_error::HolonError;
 use crate::context::HolonsContext;
 
 

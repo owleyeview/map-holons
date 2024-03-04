@@ -1,7 +1,6 @@
 use std::cell::RefCell;
 use crate::all_holon_nodes::*;
 use crate::helpers::get_holon_node_from_record;
-use crate::holon_errors::HolonError;
 use crate::holon_node::UpdateHolonNodeInput;
 use crate::holon_node::*;
 //use crate::relationship::{RelationshipMap, RelationshipName, RelationshipTarget};
@@ -10,6 +9,7 @@ use hdk::entry::get;
 use hdk::prelude::*;
 use shared_types_holon::holon_node::{HolonNode, PropertyMap, PropertyName};
 use shared_types_holon::value_types::BaseValue;
+use shared_types_holon::holon_error::HolonError;
 use std::fmt;
 use std::rc::Rc;
 use derive_new::new;
@@ -27,8 +27,8 @@ pub struct Holon {
     key: Option<MapString>,
     // pub descriptor: HolonReference,
     // pub holon_space: HolonReference,
-
     // pub dances : DanceMap,
+    pub errors: Vec<HolonError>,
 }
 
 #[hdk_entry_helper]
@@ -90,6 +90,7 @@ impl Holon {
             property_map: PropertyMap::new(),
             //relationship_map: RelationshipMap::new(),
             key: None,
+            errors: Vec::new(),
         }
     }
 
@@ -111,6 +112,7 @@ impl Holon {
             property_map: holon_node.property_map,
             //relationship_map: RelationshipMap::new(),
             key: None,
+            errors: Vec::new(),
         };
         // TODO: populate `key` from the property map once we have Descriptors/Constraints available
 

@@ -3,7 +3,6 @@ pub mod commit_manager;
 pub mod helpers;
 pub mod holon;
 pub mod holon_api;
-pub mod holon_errors;
 pub mod holon_node;
 // pub mod holon_reference;
 pub mod relationship;

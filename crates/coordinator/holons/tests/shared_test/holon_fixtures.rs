@@ -30,7 +30,7 @@ use crate::shared_test::test_data_types::HolonCreatesTestCase;
 //     create_example_property_descriptors, create_example_updates_for_property_descriptors,
 // };
 use crate::shared_test::descriptors::loader::load_type_system;
-use holons::holon_errors::HolonError;
+use shared_types_holon::holon_error::HolonError;
 
 /// This function creates a rich test dataset by creating a vector of Holons of various
 /// kinds -- from simple to complex

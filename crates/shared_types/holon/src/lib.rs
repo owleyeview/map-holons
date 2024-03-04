@@ -2,6 +2,8 @@ pub use holon_node::*;
 pub mod holon_node;
 pub use value_types::*;
 pub mod value_types;
+pub use holon_error::*;
+pub mod holon_error;
 
 /*
 #[cfg(test)]

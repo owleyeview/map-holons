@@ -2,7 +2,7 @@ use std::cell::RefCell;
 use std::collections::HashMap;
 use std::rc::Rc;
 
-use crate::holon_errors::HolonError;
+use shared_types_holon::holon_error::HolonError;
 use shared_types_holon::MapString;
 use crate::context::HolonsContext;
 use crate::holon::{Holon, HolonFieldGettable};
